@@ -5,7 +5,7 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 | Keterangan | Isi |
 |---|---|
 | Kelompok | Bagian III – Kelompok 07 |
-| Subsistem | Peminjaman Fasilitas dan Ruang Kampus |
+| Subsistem | Layanan Pendukung Kampus |
 | Layanan inti | Pengajuan, Persetujuan, Jadwal Pemakaian, dan Serah Terima Fasilitas |
 | Perwakilan kelompok | Muhammad Adrian, 13020240262 |
 
