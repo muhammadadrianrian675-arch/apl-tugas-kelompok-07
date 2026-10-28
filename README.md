@@ -15,7 +15,7 @@ Konteks & Keputusan Arsitektur (Pertemuan 5) serta Karakteristik Arsitektur & At
 |---|---|---|---|---|
 | 1 | 13020240184 | Rendi Pratama | @rian-33 | BAB I, B3, BAB IV |
 | 2 | 13020240333 | Muh. Fahmi Ashar | @[isi username Fahmi] | A2, A3, B1 |
-| 3 | 13020240112 | Muh. Ammar Samkhan | @[isi username Ammar] | A4, B2, B4 |
+| 3 | 13020240112 | Muh. Ammar Samkhan | @Ammar1234567-gif | A4, B2, B4 |
 | 4 | 13020240262 | Muhammad Adrian | @muhammadadnanrian675-arch | A1, A5, B5, Pustaka |
 
 ## Peta berkas dan penanggung jawab
