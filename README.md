@@ -31,9 +31,9 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | A4 | laporan/A4-asr.md | Muh. Ammar Samkhan | Selesai |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | Muhammad Adrian | Belum |
 | B1 | laporan/B1-karakteristik.md | Muh. Fahmi Ashar | Selesai |
-| B2 | laporan/B2-atribut-terukur.md | Muh. Ammar Samkhan | Belum |
+| B2 | laporan/B2-atribut-terukur.md | Muh. Ammar Samkhan | Selesai |
 | B3 | laporan/B3-tiga-struktur.md dan diagram/ | Rendi Pratama | Belum |
-| B4 | laporan/B4-iso-25010.md | Muh. Ammar Samkhan | Belum |
+| B4 | laporan/B4-iso-25010.md | Muh. Ammar Samkhan | Selasai |
 | B5 | laporan/B5-trade-off.md | Muhammad Adrian | Belum |
 | BAB IV | laporan/BAB4-penutup.md | Rendi Pratama | Belum |
 | Pustaka | laporan/daftar-pustaka.md | Muhammad Adrian | Belum |
