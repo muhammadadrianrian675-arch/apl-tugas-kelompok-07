@@ -28,7 +28,7 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | A1 | laporan/A1-konteks-arsitektur.md | Muhammad Adrian | Belum |
 | A2 | laporan/A2-stakeholder.md | Muh. Fahmi Ashar | Selesai |
 | A3 | laporan/A3-batasan.md | Muh. Fahmi Ashar | Selesai |
-| A4 | laporan/A4-asr.md | Muh. Ammar Samkhan | Belum |
+| A4 | laporan/A4-asr.md | Muh. Ammar Samkhan | Selesai |
 | A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | Muhammad Adrian | Belum |
 | B1 | laporan/B1-karakteristik.md | Muh. Fahmi Ashar | Selesai |
 | B2 | laporan/B2-atribut-terukur.md | Muh. Ammar Samkhan | Belum |
