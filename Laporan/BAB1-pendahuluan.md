@@ -54,7 +54,7 @@ Prioritas penggunaan ruangan diberikan kepada kegiatan akademik yang telah terja
 
 ## 1.3 Sumber Data
 
-Pengumpulan data untuk analisis kebutuhan layanan peminjaman ruang laboratorium direncanakan melalui beberapa pendekatan, yaitu pengalaman sebagai pengguna, informasi dan dokumen resmi, wawancara atau survei singkat, serta pengamatan langsung.
+Analisis kebutuhan layanan peminjaman ruang laboratorium menggunakan hasil wawancara yang telah dilakukan dan pengalaman sebagai pengguna yang dicatat dalam A4. Informasi publik serta pengamatan langsung dapat digunakan sebagai sumber pendukung untuk melengkapi dan mengonfirmasi kebutuhan.
 
 ### 1. Pengalaman sebagai Pengguna
 
@@ -82,15 +82,15 @@ Data pendukung dapat diperoleh dari informasi resmi Universitas Muslim Indonesia
 
 Informasi yang diperlukan meliputi ketentuan penggunaan laboratorium, jadwal kegiatan akademik, prosedur administrasi peminjaman, serta tanggung jawab pengguna selama menggunakan fasilitas laboratorium.
 
-Data tersebut digunakan sebagai referensi untuk memahami aturan dan batasan yang perlu dipertimbangkan dalam perancangan layanan peminjaman ruang laboratorium.
+Data tersebut dapat digunakan sebagai referensi untuk memahami aturan dan batasan yang perlu dipertimbangkan dalam perancangan layanan peminjaman ruang laboratorium.
 
 Apabila terdapat prosedur internal yang tidak dipublikasikan, informasi tersebut perlu dikonfirmasi kepada pihak pengelola laboratorium.
 
-### 3. Wawancara atau Survei Singkat
+### 3. Wawancara
 
-Wawancara atau survei singkat direncanakan untuk memperoleh informasi mengenai kebutuhan, pengalaman, dan kendala yang berkaitan dengan proses peminjaman ruang laboratorium.
+Wawancara telah dilakukan untuk memperoleh informasi mengenai kebutuhan, pengalaman, dan kendala yang berkaitan dengan proses peminjaman ruang laboratorium. Hasilnya menjadi salah satu dasar pembahasan layanan dan kebutuhan dalam laporan ini.
 
-Pihak yang menjadi sasaran pengumpulan data meliputi:
+Pihak yang berkaitan dengan layanan dan perannya adalah sebagai berikut.
 
 | Stakeholder | Kelompok | Peran dalam Layanan |
 |---|---|---|
@@ -100,7 +100,7 @@ Pihak yang menjadi sasaran pengumpulan data meliputi:
 | Admin Laboratorium | Pengelola Sistem | Mengelola jadwal, memverifikasi permohonan, dan mencatat riwayat peminjaman. |
 | Kepala Laboratorium | Pengambil Keputusan | Menetapkan kebijakan penggunaan serta memberikan persetujuan apabila diperlukan. |
 
-Beberapa pertanyaan yang dapat digunakan dalam wawancara atau survei antara lain:
+Pokok pertanyaan yang relevan untuk pengumpulan dan pendalaman informasi meliputi:
 
 1. Bagaimana prosedur peminjaman ruang laboratorium yang berlaku saat ini?
 
@@ -116,7 +116,7 @@ Beberapa pertanyaan yang dapat digunakan dalam wawancara atau survei antara lain
 
 7. Apakah diperlukan sistem yang dapat menampilkan ketersediaan ruangan dan status peminjaman secara langsung?
 
-Hasil wawancara atau survei nantinya digunakan untuk mengidentifikasi kebutuhan fungsional dan kebutuhan nonfungsional sistem, serta menentukan prioritas pengembangan layanan.
+Hasil wawancara menjadi masukan untuk mengidentifikasi kebutuhan fungsional dan kebutuhan nonfungsional sistem. Asumsi yang masih tercatat pada A3 tetap perlu dikonfirmasi kepada pengelola laboratorium.
 
 ### 4. Pengamatan Langsung
 
