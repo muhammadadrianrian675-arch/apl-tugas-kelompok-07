@@ -1,14 +1,15 @@
 flowchart LR
   U[Mahasiswa / Dosen / Petugas] -->|permintaan HTTPS| WEB[Klien web]
   WEB -->|respons HTTPS| U
-  WEB -->|permintaan layanan| API[Layanan aplikasi]
-  API -->|periksa identitas dan kewenangan| AUTH[Layanan identitas dan hak akses]
-  AUTH -->|hasil pemeriksaan| API
-  API -->|permohonan| REQ[Layanan pengajuan]
+  WEB -->|REST API melalui HTTPS| API[Layanan aplikasi - modular monolith]
+  API -->|modul internal| AUTH[Identitas dan hak akses]
+  AUTH -->|validasi identitas| SSO[SIAKAD / SSO kampus]
+  SSO -->|hasil validasi| AUTH
+  API -->|modul internal| REQ[Pengajuan peminjaman]
   REQ --> SCHED[Layanan jadwal]
-  API -->|keputusan persetujuan| APPROVE[Layanan persetujuan dan konfigurasi]
+  API -->|modul internal| APPROVE[Persetujuan dan konfigurasi]
   APPROVE -->|keputusan yang disahkan| SCHED
-  SCHED -->|cek bentrokan dan simpan melalui| REPO[Layanan akses data]
+  SCHED -->|cek bentrokan dan simpan melalui| REPO[Akses data]
   REPO -->|baca/tulis| DB[(Basis data terpusat)]
   APPROVE -->|baca/tulis konfigurasi dan keputusan melalui| REPO
   API -->|catatan kegiatan| AUDIT[Layanan pencatatan dan audit]
@@ -18,5 +19,5 @@ flowchart LR
   SCHED -->|perubahan yang sudah disahkan| QUEUE[Antrean pemberitahuan]
   QUEUE --> NOTIFY[Layanan notifikasi]
   NOTIFY -->|status pengiriman melalui| REPO
-  NOTIFY -->|kirim melalui kanal yang dipilih| CHANNEL[Gerbang kanal pemberitahuan]
+  NOTIFY -->|kirim melalui kanal yang dipilih| CHANNEL[Gateway email / WhatsApp]
   CHANNEL -->|pemberitahuan kepada pihak terdampak| U

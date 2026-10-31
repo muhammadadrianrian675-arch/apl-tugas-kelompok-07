@@ -6,7 +6,7 @@
 
 Bagian ini menggambarkan usulan arsitektur untuk subsistem *Laboratory Management*, khususnya layanan peminjaman ruang laboratorium di Fakultas Ilmu Komputer Universitas Muslim Indonesia (FIKOM UMI). Pembahasan menggunakan tiga kategori struktur: struktur modul, struktur komponen dan konektor (*component-and-connector*/C&C), serta struktur alokasi. Struktur modul menunjukkan unit perangkat lunak dan ketergantungannya; C&C menunjukkan komponen runtime dan komunikasinya; struktur alokasi menunjukkan hubungan perangkat lunak dengan lingkungan operasional [1, §2.2].
 
-Rancangan ini **selesai sebagai usulan konseptual untuk B3**, tetapi bukan keputusan arsitektur yang telah disahkan atau diimplementasikan. A1, A5, dan B5 belum tersedia di repo. Karena itu, nama komponen, alur, kanal pemberitahuan, dan penempatan infrastruktur di bawah ini perlu diperlakukan sebagai rancangan usulan yang dapat diputuskan atau disesuaikan di A5/B5.
+Rancangan ini **selesai sebagai usulan konseptual untuk B3**, tetapi bukan sistem yang telah diimplementasikan atau diuji. A1, A5, dan B5 kini tersedia dan menjadi masukan rancangan: A1 mencatat SIAKAD/SSO serta gateway email/WhatsApp sebagai sistem eksternal; A5 memilih pola *modular monolith* dengan *client-server* berbasis REST API dan RDBMS; B5 memprioritaskan konsistensi data dibanding kinerja murni. Detail vendor, kanal notifikasi yang dipakai, serta spesifikasi hosting tetap belum diputuskan.
 
 Rancangan diturunkan dari kebutuhan yang sudah dicatat:
 
@@ -26,12 +26,12 @@ Struktur modul membagi tanggung jawab perangkat lunak dan menunjukkan ketergantu
 |---|---|---|
 | Antarmuka pengguna | Menampilkan jadwal, ketersediaan, status, dan riwayat; menerima permohonan; menyediakan fungsi bagi admin/petugas. | Kasus penggunaan BAB I; kebutuhan stakeholder A2 |
 | Layanan aplikasi | Mengatur alur permohonan, pemeriksaan kewenangan, persetujuan, pencatatan, dan respons ke antarmuka. | Pemisahan alur dan validasi lintas fungsi |
-| Identitas dan hak akses | Mengenali pengguna serta memeriksa kewenangan sebelum operasi dijalankan. | ASR-3; A3-O1 |
+| Identitas dan hak akses | Memvalidasi identitas melalui integrasi SIAKAD/SSO dan memeriksa kewenangan sebelum operasi dijalankan. | ASR-3; A1; A3-O1 |
 | Pengajuan peminjaman | Memvalidasi kelengkapan permohonan dan meneruskan permohonan untuk diproses. | Kasus penggunaan BAB I; B2 A3 |
 | Jadwal dan ketersediaan | Membaca jadwal, memeriksa bentrokan, dan menjaga konsistensi penetapan ruang dan waktu. | ASR-1; A3-T2 dan A3-B3 |
 | Alur persetujuan dan konfigurasi | Mengelola tahapan dan pihak yang menyetujui, jenis keperluan, serta konfigurasi ruang sebagai data. | ASR-2; A3-B2 |
 | Pencatatan penggunaan dan audit | Mencatat peminjam, tujuan, waktu mulai/selesai, kondisi ruang, dan jejak perubahan. | ASR-3; A3-O2 dan A3-O3 |
-| Notifikasi | Meneruskan pemberitahuan perubahan yang telah disahkan dan mencatat status pengirimannya. | ASR-1 |
+| Notifikasi | Meneruskan pemberitahuan perubahan yang telah disahkan melalui gateway email/WhatsApp dan mencatat status pengirimannya. | ASR-1; A1 |
 | Akses data | Menyimpan dan mengambil data pengguna, ruang, jadwal, permohonan, persetujuan, penggunaan, konfigurasi, dan audit. | ASR-1, ASR-2, ASR-3, ASR-4 |
 
 Ketergantungan yang diusulkan: antarmuka menggunakan layanan aplikasi; layanan aplikasi menggunakan modul identitas, pengajuan, jadwal, persetujuan, pencatatan, dan notifikasi; modul-modul tersebut menggunakan akses data. Pemeriksaan kewenangan dan bentrokan jadwal dilakukan pada layanan terkait, bukan hanya di antarmuka, supaya semua jalur permintaan tunduk pada aturan yang sama.
@@ -57,20 +57,21 @@ flowchart LR
 
 ## 3. Struktur komponen dan konektor saat runtime
 
-Struktur C&C menggambarkan komponen yang berinteraksi ketika layanan digunakan. Usulan ini memakai pola klien–server: pengguna mengakses klien web, layanan aplikasi memeriksa dan mengatur proses, sedangkan penyimpanan jadwal menjadi acuan bersama. Protokol HTTPS dan transaksi ditunjukkan sebagai kebutuhan komunikasi konseptual; teknologi dan mekanisme rinci belum dipilih. Akses persisten melalui modul/komponen akses data pada Gambar B3-1 dan B3-2, bukan melalui ketergantungan langsung setiap layanan pada basis data.
+Struktur C&C menggambarkan komponen yang berinteraksi ketika layanan digunakan. Mengikuti A5, usulan ini memakai pola klien–server berbasis REST API dengan modul-modul yang berjalan sebagai satu *modular monolith*. Penyimpanan relasional menjadi acuan jadwal bersama. HTTPS, transaksi, dan integrasi sistem eksternal ditunjukkan secara konseptual; vendor RDBMS, mekanisme transaksi rinci, dan kanal notifikasi yang dipakai belum dipilih. Akses persisten melalui modul/komponen akses data pada Gambar B3-1 dan B3-2, bukan melalui ketergantungan langsung setiap modul pada basis data.
 
 ```mermaid
 flowchart LR
   U[Mahasiswa / Dosen / Petugas] -->|permintaan HTTPS| WEB[Klien web]
   WEB -->|respons HTTPS| U
-  WEB -->|permintaan layanan| API[Layanan aplikasi]
-  API -->|periksa identitas dan kewenangan| AUTH[Layanan identitas dan hak akses]
-  AUTH -->|hasil pemeriksaan| API
-  API -->|permohonan| REQ[Layanan pengajuan]
-  REQ --> SCHED[Layanan jadwal]
-  API -->|keputusan persetujuan| APPROVE[Layanan persetujuan dan konfigurasi]
+  WEB -->|REST API melalui HTTPS| API[Layanan aplikasi - modular monolith]
+  API -->|modul internal| AUTH[Identitas dan hak akses]
+  AUTH -->|validasi identitas| SSO[SIAKAD / SSO kampus]
+  SSO -->|hasil validasi| AUTH
+  API -->|modul internal| REQ[Pengajuan peminjaman]
+  REQ --> SCHED[Jadwal dan ketersediaan]
+  API -->|modul internal| APPROVE[Persetujuan dan konfigurasi]
   APPROVE -->|keputusan yang disahkan| SCHED
-  SCHED -->|cek bentrokan dan simpan melalui| REPO[Layanan akses data]
+  SCHED -->|cek bentrokan dan simpan melalui| REPO[Akses data]
   REPO -->|baca/tulis| DB[(Basis data terpusat)]
   APPROVE -->|baca/tulis konfigurasi dan keputusan melalui| REPO
   API -->|catatan kegiatan| AUDIT[Layanan pencatatan dan audit]
@@ -80,11 +81,11 @@ flowchart LR
   SCHED -->|perubahan yang sudah disahkan| QUEUE[Antrean pemberitahuan]
   QUEUE --> NOTIFY[Layanan notifikasi]
   NOTIFY -->|status pengiriman melalui| REPO
-  NOTIFY -->|kirim melalui kanal yang dipilih| CHANNEL[Gerbang kanal pemberitahuan]
+  NOTIFY -->|kirim melalui kanal yang dipilih| CHANNEL[Gateway email / WhatsApp]
   CHANNEL -->|pemberitahuan kepada pihak terdampak| U
 ```
 
-**Gambar B3-2.** Komponen dan konektor runtime yang diusulkan. Gerbang kanal pemberitahuan adalah placeholder; A2–A4 belum menetapkan apakah pemberitahuan dikirim melalui email, SMS, atau kanal lain.
+**Gambar B3-2.** Komponen dan konektor runtime yang diusulkan. SIAKAD/SSO dan gateway email/WhatsApp mengikuti konteks A1; pemilihan kanal spesifik dan detail integrasi masih perlu diputuskan.
 
 Alur penting yang ditunjukkan:
 
@@ -93,11 +94,11 @@ Alur penting yang ditunjukkan:
 3. Pihak berwenang menyetujui/menolak permohonan atau mengesahkan perubahan. Keputusan dan penggunaan ruang dicatat agar dapat ditelusuri.
 4. Setelah perubahan jadwal disahkan dan disimpan, peristiwa perubahan diteruskan melalui antrean ke layanan notifikasi, lalu dikirim ke pihak terdampak melalui kanal yang nantinya dipilih.
 
-Pemeriksaan dan penyimpanan jadwal harus menangani permohonan bersamaan agar tidak menghasilkan jadwal ganda. Mekanisme spesifik—misalnya batasan transaksi atau penguncian data—belum ditetapkan dan harus diputuskan di A5 serta diuji sesuai B2. Antrean memisahkan pengiriman notifikasi dari transaksi utama, tetapi perlu pemantauan dan percobaan ulang; detail jaminan pesan tidak hilang juga harus diputuskan sebelum implementasi.
+Pemeriksaan dan penyimpanan jadwal harus menangani permohonan bersamaan agar tidak menghasilkan jadwal ganda. A5 telah memilih RDBMS, tetapi mekanisme spesifik—misalnya batasan transaksi atau penguncian data—tetap perlu ditetapkan dan diuji sesuai B2. Antrean pada diagram merupakan komponen logis untuk memisahkan pengiriman notifikasi dari transaksi utama; teknologi, pemantauan, percobaan ulang, dan jaminan pesan tidak hilang perlu diputuskan sebelum implementasi.
 
 ## 4. Struktur alokasi
 
-Struktur alokasi menghubungkan komponen perangkat lunak dengan perangkat dan lingkungan operasionalnya. Diagram ini menunjukkan **penempatan konseptual**, bukan spesifikasi hosting yang sudah dipilih. Jenis host, penyedia, kanal notifikasi, dan mekanisme cadangan masih terbuka.
+Struktur alokasi menghubungkan komponen perangkat lunak dengan perangkat dan lingkungan operasionalnya. Diagram ini menunjukkan **penempatan konseptual**, bukan spesifikasi hosting yang sudah dipilih. Modul aplikasi ditempatkan bersama sebagai *modular monolith*, sedangkan RDBMS menjadi penyimpanan terpisah. Jenis host, penyedia, kanal notifikasi, dan mekanisme cadangan masih terbuka.
 
 ```mermaid
 flowchart TB
@@ -106,8 +107,8 @@ flowchart TB
   end
   subgraph APPHOST[Host aplikasi - lingkungan belum ditetapkan]
     WEBAPP[Komponen klien web]
-    API[Layanan aplikasi]
-    REPO[Layanan akses data]
+    API[REST API dan modul modular monolith]
+    REPO[Modul akses data]
     QUEUE[Antrean pemberitahuan]
     WORKER[Layanan/pemroses notifikasi]
   end
@@ -115,10 +116,12 @@ flowchart TB
     DB[(Basis data terpusat)]
     BACKUP[Salinan cadangan]
   end
-  GATEWAY[Gerbang kanal pemberitahuan - pilihan belum ditetapkan]
+  GATEWAY[Gateway email / WhatsApp - layanan eksternal]
+  SSO[SIAKAD / SSO kampus - layanan eksternal]
   USER[Mahasiswa / Dosen / Petugas]
   BROWSER -->|jaringan kampus atau internet, HTTPS| WEBAPP
   WEBAPP -->|HTTPS| API
+  API -->|validasi identitas| SSO
   API --> REPO
   REPO -->|koneksi layanan| DB
   API -->|peristiwa perubahan| QUEUE
@@ -128,7 +131,7 @@ flowchart TB
   DB -.->|cadangan berkala; kebijakan belum ditetapkan| BACKUP
 ```
 
-**Gambar B3-3.** Alokasi konseptual klien, layanan aplikasi, pemroses notifikasi, penyimpanan, cadangan, dan gerbang pemberitahuan.
+**Gambar B3-3.** Alokasi konseptual klien, aplikasi modular, pemroses notifikasi, RDBMS, layanan SIAKAD/SSO, gateway email/WhatsApp, dan cadangan.
 
 Basis data terpusat dimaksudkan menjadi acuan jadwal. Pemisahan antrean/pemroses notifikasi memberi ruang untuk menangani pengiriman tanpa menahan respons permohonan. Akan tetapi, satu host aplikasi dan satu basis data pada gambar tidak menjamin target ASR-4 sebesar 99%. Redundansi, pemulihan gangguan, keamanan jaringan, retensi cadangan, dan tanggung jawab operasional perlu dipilih dan diuji sebelum target ketersediaan dapat dinilai.
 
@@ -150,7 +153,7 @@ Basis data terpusat dimaksudkan menjadi acuan jadwal. Pemisahan antrean/pemroses
 - **Antrean pemberitahuan** memungkinkan pengiriman berjalan terpisah dari transaksi permohonan. Dampaknya, sistem perlu memantau antrean, mencoba ulang pesan gagal, dan mencegah atau menangani pesan ganda.
 - **Basis data terpusat** menyediakan acuan jadwal bersama. Dampaknya, ketersediaan dan pemulihan basis data perlu dirancang untuk memenuhi ASR-4.
 
-Trade-off ini adalah masukan untuk B5, bukan keputusan final. A5 perlu menetapkan pilihan dan alasannya berdasarkan ASR, batasan, biaya, dan kemampuan operasional yang tersedia.
+Trade-off ini melengkapi keputusan awal A5 dan B5. A5 memilih *modular monolith*, REST API, dan RDBMS; B5 memprioritaskan konsistensi dibanding kinerja murni serta keamanan dibanding kemudahan penggunaan. Pilihan vendor, target waktu respons, strategi ketersediaan, detail integrasi, dan bukti pengujian masih perlu ditetapkan sebelum implementasi.
 
 ## 7. Referensi
 

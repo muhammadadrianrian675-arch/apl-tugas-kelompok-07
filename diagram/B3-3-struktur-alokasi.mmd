@@ -4,8 +4,8 @@ flowchart TB
   end
   subgraph APPHOST[Host aplikasi - lingkungan belum ditetapkan]
     WEBAPP[Komponen klien web]
-    API[Layanan aplikasi]
-    REPO[Layanan akses data]
+    API[REST API dan modul modular monolith]
+    REPO[Modul akses data]
     QUEUE[Antrean pemberitahuan]
     WORKER[Layanan/pemroses notifikasi]
   end
@@ -13,10 +13,12 @@ flowchart TB
     DB[(Basis data terpusat)]
     BACKUP[Salinan cadangan]
   end
-  GATEWAY[Gerbang kanal pemberitahuan - pilihan belum ditetapkan]
+  GATEWAY[Gateway email / WhatsApp - layanan eksternal]
+  SSO[SIAKAD / SSO kampus - layanan eksternal]
   USER[Mahasiswa / Dosen / Petugas]
   BROWSER -->|jaringan kampus atau internet, HTTPS| WEBAPP
   WEBAPP -->|HTTPS| API
+  API -->|validasi identitas| SSO
   API --> REPO
   REPO -->|koneksi layanan| DB
   API -->|peristiwa perubahan| QUEUE
