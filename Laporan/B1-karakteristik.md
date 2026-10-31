@@ -1,6 +1,6 @@
 # B1. Identifikasi dan Klasifikasi Karakteristik
 
-**Penanggung Jawab:** Muh. Fahmi Ashar
+**Penanggung Jawab:**  Muh. Fahmi Ashar
 
 ## 1. Identifikasi Kandidat Karakteristik
 
