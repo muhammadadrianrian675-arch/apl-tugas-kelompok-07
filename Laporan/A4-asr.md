@@ -18,4 +18,4 @@ ASR berikut disusun untuk layanan peminjaman ruang laboratorium di Fakultas Ilmu
 | ASR-1 | T2, B1, B3 | Mahasiswa, Dosen, Asisten Laboratorium, Admin Laboratorium |
 | ASR-2 | B2, O1 | Admin Laboratorium, Kepala Laboratorium / Pengelola Berwenang |
 | ASR-3 | O1, O2, O3 | Asisten Laboratorium, Admin Laboratorium, Kepala Laboratorium / Pengelola Berwenang |
-| ASR-4 | T2, T3 | Mahasiswa, Dosen, Admin Laboratorium |     
+| ASR-4 | T2, T3 | Mahasiswa, Dosen, Admin Laboratorium |          
