@@ -6,7 +6,9 @@
 
 Bagian ini menggambarkan usulan arsitektur untuk subsistem *Laboratory Management*, khususnya layanan peminjaman ruang laboratorium di Fakultas Ilmu Komputer Universitas Muslim Indonesia (FIKOM UMI). Pembahasan menggunakan tiga kategori struktur: struktur modul, struktur komponen dan konektor (*component-and-connector*/C&C), serta struktur alokasi. Struktur modul menunjukkan unit perangkat lunak dan ketergantungannya; C&C menunjukkan komponen runtime dan komunikasinya; struktur alokasi menunjukkan hubungan perangkat lunak dengan lingkungan operasional [1, §2.2].
 
-Rancangan ini **selesai sebagai usulan konseptual untuk B3**, tetapi bukan sistem yang telah diimplementasikan atau diuji. A1, A5, dan B5 kini tersedia dan menjadi masukan rancangan: A1 mencatat SIAKAD/SSO serta gateway email/WhatsApp sebagai sistem eksternal; A5 memilih pola *modular monolith* dengan *client-server* berbasis REST API dan RDBMS; B5 memprioritaskan konsistensi data dibanding kinerja murni. Detail vendor, kanal notifikasi yang dipakai, serta spesifikasi hosting tetap belum diputuskan.
+Rancangan konseptual ini menggunakan pola *modular monolith* dengan pendekatan *client-server* berbasis REST API dan basis data relasional. Integrasi SIAKAD/SSO serta gateway email/WhatsApp merupakan bagian dari konteks sistem. Konsistensi data diprioritaskan dalam pengelolaan jadwal, sementara pilihan vendor, kanal notifikasi, dan spesifikasi hosting masih perlu ditetapkan. Rancangan ini belum diimplementasikan atau diuji.
+
+Rancangan mencakup integrasi SIAKAD/SSO untuk validasi identitas mahasiswa dan dosen. Mekanisme autentikasi petugas perlu ditetapkan pada tahap perancangan lebih lanjut.
 
 Rancangan diturunkan dari kebutuhan yang sudah dicatat:
 
@@ -26,8 +28,8 @@ Struktur modul membagi tanggung jawab perangkat lunak dan menunjukkan ketergantu
 |---|---|---|
 | Antarmuka pengguna | Menampilkan jadwal, ketersediaan, status, dan riwayat; menerima permohonan; menyediakan fungsi bagi admin/petugas. | Kasus penggunaan BAB I; kebutuhan stakeholder A2 |
 | Layanan aplikasi | Mengatur alur permohonan, pemeriksaan kewenangan, persetujuan, pencatatan, dan respons ke antarmuka. | Pemisahan alur dan validasi lintas fungsi |
-| Identitas dan hak akses | Memvalidasi identitas melalui integrasi SIAKAD/SSO dan memeriksa kewenangan sebelum operasi dijalankan. | ASR-3; A1; A3-O1 |
-| Pengajuan peminjaman | Memvalidasi kelengkapan permohonan dan meneruskan permohonan untuk diproses. | Kasus penggunaan BAB I; B2 A3 |
+| Identitas dan hak akses | Memvalidasi identitas mahasiswa dan dosen melalui SIAKAD/SSO sesuai A1 serta memeriksa kewenangan pengguna; autentikasi petugas perlu ditetapkan. | ASR-3; A1; A3-O1 |
+| Pengajuan peminjaman | Memvalidasi kelengkapan permohonan dan meneruskan permohonan untuk diproses. | Kasus penggunaan BAB I; A3-B2 |
 | Jadwal dan ketersediaan | Membaca jadwal, memeriksa bentrokan, dan menjaga konsistensi penetapan ruang dan waktu. | ASR-1; A3-T2 dan A3-B3 |
 | Alur persetujuan dan konfigurasi | Mengelola tahapan dan pihak yang menyetujui, jenis keperluan, serta konfigurasi ruang sebagai data. | ASR-2; A3-B2 |
 | Pencatatan penggunaan dan audit | Mencatat peminjam, tujuan, waktu mulai/selesai, kondisi ruang, dan jejak perubahan. | ASR-3; A3-O2 dan A3-O3 |
@@ -65,7 +67,7 @@ flowchart LR
   WEB -->|respons HTTPS| U
   WEB -->|REST API melalui HTTPS| API[Layanan aplikasi - modular monolith]
   API -->|modul internal| AUTH[Identitas dan hak akses]
-  AUTH -->|validasi identitas| SSO[SIAKAD / SSO kampus]
+  AUTH -->|validasi mahasiswa dan dosen| SSO[SIAKAD / SSO kampus]
   SSO -->|hasil validasi| AUTH
   API -->|modul internal| REQ[Pengajuan peminjaman]
   REQ --> SCHED[Jadwal dan ketersediaan]
@@ -144,7 +146,7 @@ Basis data terpusat dimaksudkan menjadi acuan jadwal. Pemisahan antrean/pemroses
 | Perubahan aturan (ASR-2) | Modul alur persetujuan dan konfigurasi memisahkan aturan dari kode alur utama. | Buktikan admin dapat mengubah aturan tanpa perubahan kode dan aturan baru berlaku sesuai target B2. |
 | Keamanan dan auditabilitas (ASR-3) | Pemeriksaan kewenangan di layanan dan modul jejak audit. | Uji akses per peran, kelengkapan catatan, dan pencegahan perubahan tanpa jejak. |
 | Ketersediaan (ASR-4) | Alokasi layanan dan data terpusat; kebutuhan cadangan ditampilkan. | Tetapkan strategi redundansi/pemulihan dan ukur waktu aktif terhadap jam kerja. |
-| Kinerja (B1) | Layanan aplikasi dan akses data menjadi jalur utama permintaan. | B1 memilih kinerja sebagai pendorong, tetapi A4/B2 belum menetapkan target waktu respons; tentukan ukuran dan uji sebelum menyatakan rancangan memenuhi kinerja. |
+| Kinerja (B1) | Layanan aplikasi dan akses data menjadi jalur utama permintaan. | Tetapkan target waktu respons dan lakukan pengukuran sebelum menilai kinerja rancangan. |
 
 ## 6. Trade-off rancangan awal
 

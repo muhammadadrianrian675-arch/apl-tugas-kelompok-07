@@ -3,10 +3,10 @@ flowchart LR
   WEB -->|respons HTTPS| U
   WEB -->|REST API melalui HTTPS| API[Layanan aplikasi - modular monolith]
   API -->|modul internal| AUTH[Identitas dan hak akses]
-  AUTH -->|validasi identitas| SSO[SIAKAD / SSO kampus]
+  AUTH -->|validasi mahasiswa dan dosen| SSO[SIAKAD / SSO kampus]
   SSO -->|hasil validasi| AUTH
   API -->|modul internal| REQ[Pengajuan peminjaman]
-  REQ --> SCHED[Layanan jadwal]
+  REQ --> SCHED[Jadwal dan ketersediaan]
   API -->|modul internal| APPROVE[Persetujuan dan konfigurasi]
   APPROVE -->|keputusan yang disahkan| SCHED
   SCHED -->|cek bentrokan dan simpan melalui| REPO[Akses data]
