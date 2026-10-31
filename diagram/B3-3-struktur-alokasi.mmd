@@ -1,0 +1,21 @@
+flowchart TB
+  subgraph CLIENT[Perangkat pengguna]
+    BROWSER[Peramban web]
+  end
+  subgraph APPHOST[Host layanan aplikasi - lingkungan kampus atau penyedia hosting]
+    WEBAPP[Klien web]
+    API[API / layanan aplikasi]
+    WORKER[Pekerja notifikasi]
+  end
+  subgraph DATAHOST[Host penyimpanan terkelola]
+    DB[(Basis data terpusat)]
+    BACKUP[Salinan cadangan]
+  end
+  GATEWAY[Gerbang email atau kanal pemberitahuan]
+  BROWSER -->|jaringan kampus / internet, HTTPS| WEBAPP
+  WEBAPP -->|HTTPS| API
+  API -->|jaringan layanan| DB
+  API -->|pesan perubahan| WORKER
+  WORKER -->|HTTPS / konektor penyedia| GATEWAY
+  DB -.->|cadangan berkala - mekanisme perlu ditetapkan| BACKUP
+  GATEWAY -.->|pemberitahuan kepada pengguna| BROWSER

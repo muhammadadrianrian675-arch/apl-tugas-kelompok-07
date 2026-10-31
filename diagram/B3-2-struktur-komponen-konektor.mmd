@@ -1,0 +1,14 @@
+flowchart LR
+  U[Mahasiswa / Dosen / Petugas] -->|HTTPS: lihat jadwal, ajukan, kelola| WEB[Klien web]
+  WEB -->|HTTPS request/response| API[Layanan aplikasi]
+  API -->|validasi identitas dan peran| AUTH[Komponen identitas dan hak akses]
+  API -->|transaksi: cek bentrok dan simpan keputusan| SCHED[Layanan jadwal dan pengajuan]
+  API -->|perintah persetujuan| APPROVE[Layanan persetujuan]
+  API -->|catatan penggunaan/perubahan| AUDIT[Layanan pencatatan dan audit]
+  SCHED -->|baca/tulis transaksi| DB[(Basis data terpusat)]
+  APPROVE -->|baca/tulis konfigurasi dan keputusan| DB
+  AUDIT -->|tulis jejak audit| DB
+  API -->|event perubahan yang disahkan| QUEUE[Antrean pemberitahuan]
+  QUEUE -->|kirim| NOTIFY[Layanan notifikasi]
+  NOTIFY -->|status pengiriman| DB
+  U -->|menerima pemberitahuan| NOTIFY
