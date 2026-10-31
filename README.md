@@ -24,7 +24,7 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 
 | Kode | Berkas | Penanggung jawab | Status |
 |---|---|---|---|
-| BAB I | laporan/BAB1-pendahuluan.md | Rendi Pratama | Draf |
+| BAB I | laporan/BAB1-pendahuluan.md | Rendi Pratama | Selesai |
 | A1 | laporan/A1-konteks-arsitektur.md | Muhammad Adrian | Belum |
 | A2 | laporan/A2-stakeholder.md | Muh. Fahmi Ashar | Selesai |
 | A3 | laporan/A3-batasan.md | Muh. Fahmi Ashar | Selesai |
