@@ -1,80 +1,92 @@
 # B1. Identifikasi dan Klasifikasi Karakteristik
 
-**Penanggung Jawab: Muh. Fahmi Ashar**
+**Penanggung Jawab:** Muh. Fahmi Ashar
 
 ## 1. Identifikasi Kandidat Karakteristik
 
-Karakteristik arsitektur merupakan ciri atau kebutuhan penting yang memengaruhi rancangan, pengembangan, dan pengoperasian sistem. Pada sistem peminjaman ruang laboratorium, karakteristik digunakan untuk memastikan proses pengecekan ketersediaan ruangan, pengajuan peminjaman, verifikasi, persetujuan, dan pencatatan penggunaan berjalan dengan baik.
+Karakteristik arsitektur merupakan ciri atau kebutuhan penting yang memengaruhi rancangan, pengembangan, dan pengoperasian sistem [1]. Pada sistem peminjaman ruang laboratorium FIKOM UMI, karakteristik digunakan untuk memastikan proses pengecekan ketersediaan ruangan, pengajuan peminjaman, verifikasi, persetujuan, dan pencatatan penggunaan berjalan dengan baik.
 
-Kategori karakteristik yang digunakan:
+**Kategori karakteristik yang digunakan:**
 
-- **Operasional:** berkaitan dengan perilaku sistem ketika digunakan.
-- **Struktural:** berkaitan dengan susunan komponen dan hubungan antarkomponen.
-- **Lintas sektor:** berkaitan dengan kebutuhan yang memengaruhi berbagai bagian atau fungsi organisasi.
+- **Operasional:** Berkaitan dengan perilaku sistem ketika digunakan.
+- **Struktural:** Berkaitan dengan susunan komponen dan hubungan antarkomponen.
+- **Lintas sektor:** Berkaitan dengan kebutuhan yang memengaruhi berbagai bagian atau fungsi organisasi.
 
-Sifat karakteristik dibedakan menjadi:
+**Sifat karakteristik dibedakan menjadi:**
 
-- **Eksplisit:** dinyatakan secara langsung dalam kebutuhan atau kebijakan sistem.
-- **Implisit:** tidak dinyatakan secara langsung, tetapi dapat disimpulkan dari kebutuhan organisasi.
+- **Eksplisit:** Dinyatakan secara langsung dalam kebutuhan, batasan (A3), atau ASR (A4).
+- **Implisit:** Tidak dinyatakan secara langsung, tetapi dapat disimpulkan dari kebutuhan organisasi.
+
+### Tabel Identifikasi Kandidat Karakteristik
 
 | No. | Karakteristik | Kategori | Sifat | Alasan |
 |---|---|---|---|---|
-| 1 | Kinerja (Performance) | Operasional | Eksplisit | Sistem harus mampu menampilkan informasi ketersediaan ruangan dan memproses pengajuan peminjaman dalam waktu yang dapat diterima. |
-| 2 | Keamanan (Security) | Lintas sektor | Eksplisit | Sistem harus melindungi data pengguna dan membatasi akses berdasarkan peran, seperti mahasiswa, dosen, asisten laboratorium, dan admin. |
-| 3 | Ketersediaan (Availability) | Operasional | Eksplisit | Sistem diharapkan dapat diakses ketika pengguna membutuhkan informasi ruangan atau ingin mengajukan peminjaman. |
-| 4 | Kemudahan Penggunaan (Usability) | Operasional | Eksplisit | Antarmuka harus mudah dipahami agar pengguna dapat melakukan pengajuan dan memeriksa status peminjaman dengan mudah. |
-| 5 | Keandalan (Reliability) | Operasional | Implisit | Sistem harus beroperasi secara konsisten dan menyimpan data peminjaman dengan benar agar tidak terjadi kehilangan informasi. |
-| 6 | Integritas Data (Data Integrity) | Lintas sektor | Eksplisit | Data jadwal dan peminjaman harus akurat serta mencegah terjadinya pemesanan ruangan pada waktu yang sama. |
-| 7 | Kemudahan Pemeliharaan (Maintainability) | Struktural | Implisit | Sistem perlu dirancang agar mudah diperbaiki dan dikembangkan ketika terdapat perubahan kebutuhan laboratorium. |
-| 8 | Skalabilitas (Scalability) | Struktural | Implisit | Sistem perlu mampu menyesuaikan diri apabila jumlah pengguna, ruangan, dan transaksi peminjaman bertambah. |
-| 9 | Auditabilitas (Auditability) | Lintas sektor | Eksplisit | Riwayat pengajuan, persetujuan, dan penggunaan ruangan perlu disimpan agar dapat diperiksa kembali oleh pihak pengelola. |
-| 10 | Interoperabilitas (Interoperability) | Struktural | Implisit | Sistem berpotensi dikembangkan agar dapat terhubung dengan layanan akademik atau sistem informasi kampus lainnya. |
+| 1 | Keamanan (Security) | Lintas sektor | Eksplisit | Hak akses berbeda untuk tiap peran (O1), dan riwayat penggunaan harus tercatat serta tidak dapat diubah tanpa jejak (O3, ASR-3). |
+| 2 | Keandalan dan Integritas Data (Reliability and Data Integrity) | Operasional | Eksplisit | Bentrok jadwal harus dicegah (B3), dan jadwal pernah berubah mendadak tanpa informasi tepat waktu sehingga data jadwal harus konsisten dan perubahan diberitahukan (ASR-1). |
+| 3 | Kemudahan Pemeliharaan (Maintainability) | Struktural | Eksplisit | Penyetuju dan tahapan persetujuan ditetapkan pihak berwenang dan dapat berubah (B2), serta admin mengelola data ruangan (O1). Aturan harus berupa data, bukan kode program (ASR-2). |
+| 4 | Ketersediaan (Availability) | Operasional | Eksplisit | Pengecekan ketersediaan dan pengajuan memerlukan jaringan (T3) dan bergantung pada data jadwal (T2). Jika layanan tidak dapat diakses, pencatatan di luar sistem berisiko memicu bentrok (ASR-4). |
+| 5 | Auditabilitas (Auditability) | Lintas sektor | Eksplisit | Riwayat pengajuan, persetujuan, dan penggunaan ruangan disimpan sebagai dokumentasi dan bahan evaluasi (O3). Sudah tercakup pada ASR-3. |
+| 6 | Kinerja (Performance) | Operasional | Implisit | Pengguna mengharapkan respons yang wajar, tetapi jadwal kuliah dan praktikum di laboratorium sudah teratur sehingga beban bersamaan kecil. Tidak ada ASR kinerja pada A4. |
+| 7 | Kemudahan Penggunaan (Usability) | Lintas sektor | Implisit | Pengguna terdiri atas mahasiswa, dosen, asisten, dan admin dengan kemampuan teknis beragam, sehingga antarmuka diharapkan mudah dipahami. |
+| 8 | Skalabilitas (Scalability) | Operasional | Implisit | Sistem perlu menyesuaikan diri apabila jumlah ruangan dan transaksi bertambah, tetapi cakupan layanan terbatas pada ruang laboratorium (T1). |
+| 9 | Interoperabilitas (Interoperability) | Struktural | Implisit | Sistem berpotensi dikembangkan agar terhubung dengan layanan akademik atau sistem informasi kampus lainnya. |
 
 ## 2. Tiga Ciri Karakteristik Arsitektur sebagai Alat Uji
 
-Karakteristik arsitektur diuji menggunakan tiga ciri berikut:
+Sebuah karakteristik layak menjadi pendorong arsitektur jika memenuhi ketiga ciri berikut [1]:
 
-1. **Dampak terhadap keputusan arsitektur:** karakteristik memengaruhi pemilihan teknologi, pola arsitektur, atau komponen sistem.
-2. **Dapat diuji atau diukur:** karakteristik dapat dinilai menggunakan indikator atau kriteria penerimaan.
-3. **Dampak lintas komponen:** karakteristik memengaruhi beberapa bagian sistem atau keputusan jangka panjang.
+1. **Menentukan pertimbangan rancangan di luar domain bisnis:** Karakteristik bukan fungsi bisnis (seperti mengajukan atau menyetujui peminjaman), tetapi syarat bagaimana fungsi tersebut harus dijalankan.
+2. **Memengaruhi aspek struktural rancangan:** Karakteristik memengaruhi pemilihan pola arsitektur, pembagian komponen, atau penyimpanan data.
+3. **Penting bagi keberhasilan sistem:** Jika karakteristik tidak terpenuhi, layanan gagal mencapai tujuannya.
 
-| No. | Karakteristik | Dampak pada Arsitektur | Dapat Diuji | Dampak Lintas Komponen |
-|---|---|---|---|---|
-| 1 | Kinerja | Ya | Ya, melalui pengukuran waktu respons sistem. | Ya |
-| 2 | Keamanan | Ya | Ya, melalui pengujian hak akses dan autentikasi. | Ya |
-| 3 | Ketersediaan | Ya | Ya, melalui pengukuran waktu aktif sistem. | Ya |
-| 4 | Kemudahan Penggunaan | Ya | Ya, melalui pengujian langsung oleh pengguna. | Dapat bervariasi |
-| 5 | Keandalan | Ya | Ya, melalui pengujian penyimpanan dan pemulihan data. | Ya |
-| 6 | Integritas Data | Ya | Ya, melalui pengujian validasi dan bentrok jadwal. | Ya |
-| 7 | Kemudahan Pemeliharaan | Ya | Ya, melalui pengujian perubahan dan perbaikan sistem. | Ya |
-| 8 | Skalabilitas | Ya | Ya, melalui pengujian peningkatan jumlah pengguna. | Ya |
-| 9 | Auditabilitas | Ya | Ya, melalui pemeriksaan riwayat aktivitas peminjaman. | Ya |
-| 10 | Interoperabilitas | Ya | Ya, melalui pengujian pertukaran data antarsistem. | Ya |
+### Tabel Pengujian Karakteristik
+
+| No. | Karakteristik | (1) Di luar domain bisnis | (2) Memengaruhi struktur | (3) Penting bagi keberhasilan | Hasil |
+|---|---|---|---|---|---|
+| 1 | Keamanan | Ya | Ya (otentikasi, peran, dan log di semua alur) | Ya | Pendorong |
+| 2 | Keandalan dan Integritas Data | Ya | Ya (satu sumber data jadwal dan pemeriksaan bentrok atomik) | Ya | Pendorong |
+| 3 | Kemudahan Pemeliharaan | Ya | Ya (modul alur persetujuan terpisah dan aturan sebagai data) | Ya | Pendorong |
+| 4 | Ketersediaan | Ya | Sebagian (cukup dengan pemusatan data, cadangan, dan pemantauan) | Ya | Pendukung |
+| 5 | Auditabilitas | Ya | Ya | Ya | Digabung ke Keamanan (ASR-3) |
+| 6 | Kinerja | Ya | Tidak (beban kecil) | Sedang | Bukan pendorong |
+| 7 | Kemudahan Penggunaan | Ya | Tidak (urusan antarmuka) | Ya | Pendukung |
+| 8 | Skalabilitas | Ya | Tidak | Rendah | Bukan pendorong |
+| 9 | Interoperabilitas | Ya | Sebagian | Rendah | Bukan pendorong |
 
 ## 3. Pemilihan Tiga Karakteristik Pendorong
 
-Berdasarkan kebutuhan sistem peminjaman ruang laboratorium, terdapat tiga karakteristik utama yang menjadi pendorong keputusan arsitektur, yaitu keamanan, kinerja, dan integritas data.
+Berdasarkan pengujian di atas dan kesesuaian dengan ASR pada A4, tiga karakteristik pendorong adalah **Keamanan, Keandalan dan Integritas Data, serta Kemudahan Pemeliharaan**.
 
-### 3.1 Keamanan (Security)
+### 3.1 Keamanan (Security) — ASR-3
 
-Keamanan dipilih karena sistem menyimpan data pengguna dan informasi peminjaman ruangan yang hanya boleh diakses oleh pihak sesuai kewenangannya.
+Keamanan dipilih karena sistem mencatat penggunaan ruangan dan persetujuan yang menyangkut aset fakultas, serta memiliki beberapa peran dengan hak akses berbeda.
 
-- **Alasan:** sistem memiliki beberapa jenis pengguna dengan hak akses yang berbeda. Data pengajuan dan persetujuan peminjaman harus terlindungi dari akses yang tidak sah.
-- **Pengaruh terhadap arsitektur:** menentukan penerapan autentikasi, otorisasi berdasarkan peran pengguna, serta perlindungan data.
-- **Cara pengujian:** melakukan pengujian login, hak akses setiap pengguna, dan pembatasan akses terhadap fitur tertentu.
+- **Alasan:** Riwayat dipakai sebagai dokumentasi dan bahan evaluasi (O3), sehingga satu catatan yang berubah tanpa jejak sudah merusak tujuannya.
+- **Pengaruh terhadap arsitektur:** Menentukan otentikasi, otorisasi berdasarkan peran, dan log yang ada di semua alur sejak awal karena sulit ditambahkan belakangan.
+- **Cara pengujian:** Uji hak akses tiap peran, percobaan akses oleh peran tanpa hak, dan pencocokan sampel catatan dengan log audit.
 
-### 3.2 Kinerja (Performance)
+### 3.2 Keandalan dan Integritas Data (Reliability and Data Integrity) — ASR-1
 
-Kinerja dipilih karena sistem harus memberikan respons yang baik ketika pengguna memeriksa ketersediaan ruangan, mengajukan peminjaman, dan melihat status permohonan.
+Karakteristik ini dipilih karena kegagalan yang paling merugikan adalah dua kegiatan mendapat laboratorium yang sama pada jam yang sama, atau perubahan jadwal yang tidak sampai ke pihak terdampak.
 
-- **Alasan:** proses pencarian jadwal dan pengajuan yang lambat dapat menghambat aktivitas mahasiswa, dosen, maupun pengelola laboratorium.
-- **Pengaruh terhadap arsitektur:** memengaruhi pemilihan teknologi, pengelolaan basis data, dan proses pengambilan informasi jadwal peminjaman.
-- **Cara pengujian:** mengukur waktu respons ketika pengguna membuka informasi ruangan, memeriksa jadwal, dan mengirim pengajuan peminjaman.
+- **Alasan:** Jadwal praktikum pernah diundur karena laboratorium dipakai kegiatan lain, dan informasinya hanya disampaikan melalui grup chat.
+- **Pengaruh terhadap arsitektur:** Menentukan satu sumber data jadwal, pemeriksaan bentrok yang tidak dapat dilewati, aturan prioritas antarkegiatan, dan notifikasi yang terpisah dari alur utama.
+- **Cara pengujian:** Uji pengajuan serentak pada ruang dan waktu yang sama, kueri tumpang tindih jadwal, dan pengukuran waktu notifikasi dari log.
 
-### 3.3 Integritas Data (Data Integrity)
+### 3.3 Kemudahan Pemeliharaan (Maintainability) — ASR-2
 
-Integritas data dipilih karena informasi jadwal dan transaksi peminjaman harus selalu akurat dan konsisten.
+Kemudahan pemeliharaan dipilih karena kebijakan penyetuju dan tahapan persetujuan dapat berubah tanpa melibatkan pengembang.
 
-- **Alasan:** kesalahan penyimpanan atau perubahan data dapat menyebabkan jadwal peminjaman bertabrakan dan ruangan digunakan oleh lebih dari satu pihak pada waktu yang sama.
-- **Pengaruh terhadap arsitektur:** memengaruhi rancangan basis data, validasi jadwal, pengelolaan transaksi, dan aturan penyimpanan data peminjaman.
-- **Cara pengujian:** melakukan pengujian pengajuan pada ruangan dan waktu yang sama, validasi data peminjaman, serta pemeriksaan konsistensi riwayat transaksi.
+- **Alasan:** Jika aturan persetujuan ditulis di dalam kode, setiap perubahan kebijakan membutuhkan pengembang.
+- **Pengaruh terhadap arsitektur:** Menentukan alur persetujuan sebagai modul terpisah dan aturan yang disimpan sebagai data.
+- **Cara pengujian:** Latihan perubahan oleh admin (tambah laboratorium, ganti penyetuju, ubah tahapan) dan pemeriksaan bahwa tidak ada perubahan kode.
+
+### 3.4 Karakteristik yang Tidak Dipilih
+
+Ketersediaan (ASR-4) tetap dipertahankan sebagai kebutuhan pendukung karena targetnya dapat dipenuhi dengan pemusatan data dan pemantauan tanpa struktur khusus.
+
+Kinerja tidak dipilih karena jadwal kuliah dan praktikum sudah teratur sehingga beban bersamaan kecil, dan kegiatan insidental ditangani melalui perubahan jadwal pada ASR-1.
+
+## 4. Referensi
+
+[1] M. Richards and N. Ford, *Fundamentals of Software Architecture: An Engineering Approach*. O'Reilly Media, 2020, Chapter 4.
