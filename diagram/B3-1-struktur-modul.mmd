@@ -1,13 +1,14 @@
 flowchart LR
-  UI[Antarmuka pengguna] --> ID[Identitas dan hak akses]
-  UI --> APP[Layanan aplikasi]
+  UI[Antarmuka pengguna] --> APP[Layanan aplikasi]
+  APP --> ID[Identitas dan hak akses]
   APP --> REQ[Pengajuan peminjaman]
   APP --> SCH[Jadwal dan ketersediaan]
   APP --> APR[Alur persetujuan dan konfigurasi]
-  APP --> USE[Pencatatan penggunaan dan audit]
-  SCH --> DATA[Akses data]
-  REQ --> DATA
-  APR --> DATA
-  USE --> DATA
+  APP --> AUDIT[Pencatatan penggunaan dan audit]
   APP --> NOTIF[Notifikasi]
+  ID --> DATA[Akses data]
+  REQ --> DATA
+  SCH --> DATA
+  APR --> DATA
+  AUDIT --> DATA
   NOTIF --> DATA

@@ -1,14 +1,22 @@
 flowchart LR
-  U[Mahasiswa / Dosen / Petugas] -->|HTTPS: lihat jadwal, ajukan, kelola| WEB[Klien web]
-  WEB -->|HTTPS request/response| API[Layanan aplikasi]
-  API -->|validasi identitas dan peran| AUTH[Komponen identitas dan hak akses]
-  API -->|transaksi: cek bentrok dan simpan keputusan| SCHED[Layanan jadwal dan pengajuan]
-  API -->|perintah persetujuan| APPROVE[Layanan persetujuan]
-  API -->|catatan penggunaan/perubahan| AUDIT[Layanan pencatatan dan audit]
-  SCHED -->|baca/tulis transaksi| DB[(Basis data terpusat)]
-  APPROVE -->|baca/tulis konfigurasi dan keputusan| DB
-  AUDIT -->|tulis jejak audit| DB
-  API -->|event perubahan yang disahkan| QUEUE[Antrean pemberitahuan]
-  QUEUE -->|kirim| NOTIFY[Layanan notifikasi]
-  NOTIFY -->|status pengiriman| DB
-  U -->|menerima pemberitahuan| NOTIFY
+  U[Mahasiswa / Dosen / Petugas] -->|permintaan HTTPS| WEB[Klien web]
+  WEB -->|respons HTTPS| U
+  WEB -->|permintaan layanan| API[Layanan aplikasi]
+  API -->|periksa identitas dan kewenangan| AUTH[Layanan identitas dan hak akses]
+  AUTH -->|hasil pemeriksaan| API
+  API -->|permohonan| REQ[Layanan pengajuan]
+  REQ --> SCHED[Layanan jadwal]
+  API -->|keputusan persetujuan| APPROVE[Layanan persetujuan dan konfigurasi]
+  APPROVE -->|keputusan yang disahkan| SCHED
+  SCHED -->|cek bentrokan dan simpan melalui| REPO[Layanan akses data]
+  REPO -->|baca/tulis| DB[(Basis data terpusat)]
+  APPROVE -->|baca/tulis konfigurasi dan keputusan melalui| REPO
+  API -->|catatan kegiatan| AUDIT[Layanan pencatatan dan audit]
+  AUDIT -->|tulis jejak audit melalui| REPO
+  SCHED -->|perubahan jadwal| AUDIT
+  APPROVE -->|keputusan persetujuan| AUDIT
+  SCHED -->|perubahan yang sudah disahkan| QUEUE[Antrean pemberitahuan]
+  QUEUE --> NOTIFY[Layanan notifikasi]
+  NOTIFY -->|status pengiriman melalui| REPO
+  NOTIFY -->|kirim melalui kanal yang dipilih| CHANNEL[Gerbang kanal pemberitahuan]
+  CHANNEL -->|pemberitahuan kepada pihak terdampak| U
