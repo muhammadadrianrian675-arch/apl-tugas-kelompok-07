@@ -25,18 +25,18 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | Kode | Berkas | Penanggung jawab | Status |
 |---|---|---|---|
 | BAB I | laporan/BAB1-pendahuluan.md | Rendi Pratama | Selesai |
-| A1 | laporan/A1-konteks-arsitektur.md | Muhammad Adrian | Belum |
+| A1 | laporan/A1-konteks-arsitektur.md | Muhammad Adrian | Selesai |
 | A2 | laporan/A2-stakeholder.md | Muh. Fahmi Ashar | Selesai |
 | A3 | laporan/A3-batasan.md | Muh. Fahmi Ashar | Selesai |
 | A4 | laporan/A4-asr.md | Muh. Ammar Samkhan | Selesai |
-| A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | Muhammad Adrian | Belum |
+| A5 | laporan/A5-keputusan-arsitektur.md dan adr/ | Muhammad Adrian | Selesai |
 | B1 | laporan/B1-karakteristik.md | Muh. Fahmi Ashar | Selesai |
 | B2 | laporan/B2-atribut-terukur.md | Muh. Ammar Samkhan | Selesai |
 | B3 | laporan/B3-tiga-struktur.md dan diagram/ | Rendi Pratama | Selesai |
 | B4 | laporan/B4-iso-25010.md | Muh. Ammar Samkhan | Selasai |
-| B5 | laporan/B5-trade-off.md | Muhammad Adrian | Belum |
+| B5 | laporan/B5-trade-off.md | Muhammad Adrian | Selesai |
 | BAB IV | laporan/BAB4-penutup.md | Rendi Pratama | Selesai |
-| Pustaka | laporan/daftar-pustaka.md | Muhammad Adrian | Belum |
+| Pustaka | laporan/daftar-pustaka.md | Muhammad Adrian | Selesai|
 
 ## Laporan PDF terakhir
 
