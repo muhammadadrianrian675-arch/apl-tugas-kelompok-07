@@ -1,12 +1,10 @@
-# BAB IV POLA
-
 **Nama:** Muhammad Adrian  
 **NIM:** 13020240262  
 **Bagian:** U4 – Pola  
 
 ---
 
-## 4.1 Gaya dan Pola yang Digunakan
+## 3.3 Gaya dan Pola yang Digunakan
 
 Taktik pada BAB III menjelaskan langkah teknis untuk memenuhi karakteristik kualitas. Pola (*pattern*) melengkapinya dengan menentukan bagaimana struktur sistem disusun agar taktik tersebut dapat diterapkan dengan rapi. Pola adalah solusi yang sudah teruji untuk masalah desain yang sering berulang.
 
@@ -20,7 +18,7 @@ Layanan Peminjaman Ruang Laboratorium FIKOM UMI menggunakan gaya arsitektur **Cl
 
 ---
 
-## 4.2 Pola 1 – Layered (Arsitektur Berlapis)
+## 3.4 Pola 1 – Layered (Arsitektur Berlapis)
 
 | Aspek | Penjelasan |
 | :--- | :--- |
@@ -32,7 +30,7 @@ Layanan Peminjaman Ruang Laboratorium FIKOM UMI menggunakan gaya arsitektur **Cl
 
 ---
 
-## 4.3 Pola 2 – Repository
+## 3.4 Pola 2 – Repository
 
 | Aspek | Penjelasan |
 | :--- | :--- |
@@ -44,7 +42,7 @@ Layanan Peminjaman Ruang Laboratorium FIKOM UMI menggunakan gaya arsitektur **Cl
 
 ---
 
-## 4.4 Pola 3 – State
+## 3.5 Pola 3 – State
 
 | Aspek | Penjelasan |
 | :--- | :--- |
@@ -56,7 +54,7 @@ Layanan Peminjaman Ruang Laboratorium FIKOM UMI menggunakan gaya arsitektur **Cl
 
 ---
 
-## 4.5 Perbedaan Gaya dan Pola
+## 3.6 Perbedaan Gaya dan Pola
 
 Gaya arsitektur dan pola sering tertukar karena keduanya sama-sama menjelaskan struktur. Perbedaan utamanya terletak pada cakupan dan tujuannya: gaya menentukan jenis komponen dan cara berhubungan untuk seluruh sistem, sedangkan pola menyelesaikan satu masalah desain yang berulang pada bagian tertentu sistem.
 
@@ -70,7 +68,7 @@ Pada layanan ini, gaya Client-Server saja tidak menjelaskan cara mencegah dua ma
 
 ---
 
-## 4.6 Ringkasan Penerapan Pola
+## 3.7 Ringkasan Penerapan Pola
 
 | Pola | Taktik/Skenario | Kelebihan utama | Kekurangan utama |
 | :--- | :--- | :--- | :--- |
