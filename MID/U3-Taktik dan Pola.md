@@ -3,7 +3,7 @@
 
 **Nama:** Muh. Fahmi Ashar  
 **NIM:** 13020240333  
-**Bagian:** U3 – Taktik  
+**Bagian:** U3 – Taktik dan Pola
 
 ## 3.1 Taktik (U3)
 
