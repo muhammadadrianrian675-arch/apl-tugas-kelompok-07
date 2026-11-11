@@ -42,6 +42,7 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | – | Sampul dan daftar isi | uts/UTS_III_Kelompok07.pdf | Rendi Pratama | Draf |
 | – | PDF akhir dan berkas tautan LMS | uts/UTS_III_Kelompok07.pdf, uts/UTS_III_Kelompok07.txt | Rendi Pratama | Draf (menunggu gambar U5) |
 
+<<<<<<< HEAD
 ### Yang masih harus diselesaikan
 
 1. Gambar U5 (`gambar-5.1.png` s.d. `gambar-5.4.png`) di-commit ke `uts/` agar diagram tampil.
@@ -51,6 +52,8 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 5. Akun commit pada Lampiran 2 dikonfirmasi oleh tiap anggota.
 6. Foto bukti wawancara U1 disimpan sebagai file di repo (misalnya `bukti-data/`) agar dapat dimasukkan ke PDF.
 
+=======
+>>>>>>> ef44278ebc9fdc1ba9c55d890da0fb696888d998
 ### Laporan PDF akhir
 
 `uts/UTS_III_Kelompok07.pdf` (maksimal 12 halaman isi). Tautan dikirim ke LMS Kalam UMI dalam berkas `UTS_III_Kelompok07.txt`.
