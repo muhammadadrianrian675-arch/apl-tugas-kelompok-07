@@ -12,7 +12,7 @@ Bab ini menyajikan desain layanan dalam empat diagram: diagram konteks, diagram 
 
 Diagram konteks menunjukkan layanan sebagai satu kesatuan beserta pihak luar yang berinteraksi dengannya. Pihak luar diambil dari stakeholder pada BAB I (subbab 1.3).
 
-![Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI](gambar-5.1.png)  
+![Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI](4.1Diagram_Konteks.png)  
 *Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI*
 
 > **Keterangan:** Persegi panjang adalah entitas luar, elips adalah layanan, dan anak panah adalah aliran data beserta arahnya.
