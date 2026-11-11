@@ -68,7 +68,7 @@ Mahasiswa belum memiliki akses informasi ketersediaan laboratorium secara langsu
 | 3 | Asisten Laboratorium | Membantu kegiatan laboratorium dan mengawasi pemakaian fasilitas | Mengetahui siapa memakai ruangan dan kapan |
 | 4 | Kepala Laboratorium | Mengatur jadwal, memberikan izin peminjaman, mengawasi laboran, mengelola fasilitas, dan bertanggung jawab atas seluruh kegiatan laboratorium | Penggunaan laboratorium berjalan tertib, fasilitas terjaga, dan jadwal tidak berbenturan |
 
-Pembagian tugas: Kepala Laboratorium mengatur jadwal secara keseluruhan dan menetapkan kebijakan, sedangkan Laboran menangani operasional harian dan memutuskan permohonan peminjaman individu.
+Pembagian tugas: Kepala Laboratorium bertanggung jawab atas pengelolaan laboratorium secara keseluruhan, termasuk mengatur jadwal, memberikan izin peminjaman, mengawasi laboran, dan mengelola fasilitas. Sementara itu, Laboran membantu operasional harian serta melayani mahasiswa yang ingin mengajukan peminjaman laboratorium.
 
 ## 1.4 Kebutuhan Fungsional Layanan
 
