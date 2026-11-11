@@ -1,4 +1,4 @@
-# BAB V DESAIN DAN DIAGRAM
+#  BAB IV DESAIN DAN DIAGRAM
 
 **Nama:** Muhammad Adrian  
 **NIM:** 13020240262  
@@ -8,12 +8,12 @@ Bab ini menyajikan desain layanan dalam empat diagram: diagram konteks, diagram 
 
 ---
 
-## 5.1 Diagram Konteks
+## 4.1 Diagram Konteks
 
 Diagram konteks menunjukkan layanan sebagai satu kesatuan beserta pihak luar yang berinteraksi dengannya. Pihak luar diambil dari stakeholder pada BAB I (subbab 1.3).
 
-![Gambar 5.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI](gambar-5.1.png)  
-*Gambar 5.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI*
+![Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI](gambar-5.1.png)  
+*Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI*
 
 > **Keterangan:** Persegi panjang adalah entitas luar, elips adalah layanan, dan anak panah adalah aliran data beserta arahnya.
 
@@ -26,7 +26,7 @@ Diagram konteks menunjukkan layanan sebagai satu kesatuan beserta pihak luar yan
 
 ---
 
-## 5.2 Diagram Arsitektur
+## 4.2 Diagram Arsitektur
 
 Diagram arsitektur menunjukkan struktur internal layanan yang menerapkan tiga pola pada BAB IV: Layered pada pembagian lapisan, Repository pada lapisan akses data, dan State pada Layanan Status.
 
@@ -46,7 +46,7 @@ Diagram arsitektur menunjukkan struktur internal layanan yang menerapkan tiga po
 
 ---
 
-## 5.3 Diagram UML – Diagram Kelas
+## 4.3 Diagram UML – Diagram Kelas
 
 Diagram kelas menggambarkan kelas utama layanan beserta hubungannya. Kelas berwarna biru adalah layanan, jingga adalah repository, dan kuning adalah kelas pola State.
 
@@ -62,7 +62,7 @@ Diagram kelas menggambarkan kelas utama layanan beserta hubungannya. Kelas berwa
 
 ---
 
-## 5.4 Diagram UML – Diagram Sequence Pengajuan Peminjaman
+## 4.4 Diagram UML – Diagram Sequence Pengajuan Peminjaman
 
 Diagram sequence menunjukkan urutan interaksi saat mahasiswa mengajukan peminjaman dan memperlihatkan bagaimana Taktik 2 bekerja untuk Skenario 2.
 
@@ -78,7 +78,7 @@ Diagram sequence menunjukkan urutan interaksi saat mahasiswa mengajukan peminjam
 
 ---
 
-## 5.5 Prinsip Desain yang Diterapkan
+## 4.5 Prinsip Desain yang Diterapkan
 
 Tiga prinsip desain berikut diterapkan pada layanan ini.
 
@@ -90,7 +90,7 @@ Tiga prinsip desain berikut diterapkan pada layanan ini.
 
 ---
 
-## 5.6 Ringkasan Desain
+## 4.6 Ringkasan Desain
 
 | ASR | Taktik (BAB III) | Pola (BAB IV) | Diagram yang menunjukkan |
 | :--- | :--- | :--- | :--- |
