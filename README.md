@@ -16,7 +16,7 @@ Repositori Kelompok 07 Bagian III. Berisi **Tugas Proyek UTS** (folder `uts/`) d
 | 1 | 13020240184 | Rendi Pratama | @RenDY-16 | U6, U7, Penutup, Pustaka, Lampiran, Sampul, Daftar Isi, PDF akhir | BAB I, B3, BAB IV |
 | 2 | 13020240333 | Muh. Fahmi Ashar | @Fhmii-png | U3 | A2, A3, B1 |
 | 3 | 13020240112 | Muh. Ammar Samkhan | @Ammar1234567-gif | U1, U2 | A4, B2, B4 |
-| 4 | 13020240262 | Muhammad Adrian | @muhammadadnanrian675-arch | U4, U5 | A1, A5, B5, Pustaka |
+| 4 | 13020240262 | Muhammad Adrian | rian-33 | U4, U5 | A1, A5, B5, Pustaka |
 
 ## Tugas Proyek UTS – Perancangan Arsitektur Layanan Smart Campus UMI
 
