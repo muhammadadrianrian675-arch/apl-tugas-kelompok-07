@@ -27,7 +27,7 @@ Ketika ditanya apakah mengetahui cara mengecek ruangan laboratorium yang sedang 
 
 **Bukti 2 – Wawancara Asisten Laboratorium (R2)**
 
-Ketika ditanya bagaimana cara mengetahui laboratorium yang sedang kosong, pengelola menjelaskan:
+Ketika ditanya bagaimana cara mengetahui laboratorium yang sedang kosong, asisten laboratorium menjelaskan:
 
 > Mahasiswa bertanya langsung kepada laboran.
 
@@ -49,7 +49,7 @@ Ketika ditanya apakah ingin mengetahui permohonan peminjamannya diterima atau di
 
 **Bukti tambahan – Wawancara Asisten Laboratorium (R2)**
 
-Pengelola juga menyampaikan bahwa salah satu kendala peminjaman adalah jadwal penggunaan laboratorium yang bertabrakan.
+asisten laboratorium juga menyampaikan bahwa salah satu kendala peminjaman adalah jadwal penggunaan laboratorium yang bertabrakan.
 
 **Kesimpulan masalah utama:**
 
