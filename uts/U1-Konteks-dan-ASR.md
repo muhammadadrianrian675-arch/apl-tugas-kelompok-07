@@ -1,13 +1,9 @@
-# IDENTITAS PENYUSUN
+# BAB I PENDAHULUAN
 
 - **Nama:** Muh Ammar Samkhan
 - **Stambuk (NIM):** 13020240112
 - **Bagian Tugas:** U1 – Konteks dan ASR
-
 ---
-
-# BAB I PENDAHULUAN
-
 ## 1.1 Ringkasan Layanan
 
 **Layanan Peminjaman Ruang Laboratorium Fakultas Ilmu Komputer (FIKOM) UMI** adalah layanan di bawah subsistem **Layanan Pendukung Kampus** (Kelompok III-7) pada Smart Campus UMI. Layanan ini membantu mahasiswa mengetahui aturan penggunaan laboratorium, melihat ketersediaan ruangan, mengajukan peminjaman di luar jadwal praktikum, dan memantau status permohonan. Mahasiswa yang tidak memiliki laptop juga dapat memakai komputer laboratorium untuk tugas kelompok dan proyek kuliah dengan izin pengelola.
