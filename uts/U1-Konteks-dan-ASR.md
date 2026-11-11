@@ -103,8 +103,8 @@ ASR adalah kebutuhan kualitas yang paling memengaruhi keputusan arsitektur dan d
 | Kode | Karakteristik | Kebutuhan | Ukuran Respons |
 |---|---|---|---|
 | ASR-1 | K1 Performance | Mahasiswa dapat melihat ketersediaan ruangan dengan cepat, walaupun banyak yang membuka bersamaan. | Saat **300 mahasiswa** membuka halaman ketersediaan secara bersamaan, minimal 95% permintaan berhasil menampilkan informasi dalam waktu maksimal **2 detik**. |
-| ASR-2 | K2 Reliability | Satu ruangan pada jam yang sama tidak boleh dipinjam dua orang. | Jika **100 mahasiswa** memesan ruangan dan jam yang sama secara bersamaan, **hanya 1 orang yang mendapat ruangan**, dan 99 lainnya diberi tahu bahwa ruangan sudah terisi. |
-| ASR-3 | K3 Usability | Mahasiswa mengetahui status permohonan tanpa bertanya kepada laboran. | Setelah laboran menyetujui atau menolak, mahasiswa melihat statusnya dalam **1 menit**. |
+| ASR-2 | K2 Reliability | Satu ruangan pada jam yang sama tidak boleh dipinjam dua orang. | Jika **100 mahasiswa** mengajukan peminjaman laboratorium yang sama pada tanggal dan jam yang sama secara bersamaan, **hanya 1 pengajuan yang diterima**, sedangkan 99 pengajuan lainnya ditolak karena jadwal sudah terisi. |
+| ASR-3 | K3 Usability | Mahasiswa dapat menemukan dan melihat status permohonan melalui akun masing-masing tanpa harus menghubungi laboran. | Setelah laboran menyetujui atau menolak permohonan, status dapat dilihat oleh mahasiswa maksimal dalam waktu **1 menit**. |
 ## 1.7 Bagian yang Diperbarui dari Tugas Kelompok 1
 
 | Bagian Tugas Kelompok 1 | Isi sebelumnya | Pembaruan pada UTS |
