@@ -64,9 +64,9 @@ Mahasiswa belum memiliki akses informasi ketersediaan laboratorium secara langsu
 | No. | Stakeholder | Peran | Kepentingan utama |
 |---|---|---|---|
 | 1 | Mahasiswa | Mengajukan peminjaman dan memakai fasilitas laboratorium | Mengetahui ketersediaan ruangan dan status permohonan tanpa bertanya langsung |
-| 2 | Laboran | Mengelola operasional laboratorium dan memutuskan permohonan | Tidak ada jadwal bentrok dan beban tanya-jawab berkurang |
+| 2 | Laboran | Membantu operasional harian dan melayani mahasiswa dalam proses pengajuan peminjaman | Jadwal penggunaan laboratorium tertata dan tidak terjadi benturan jadwal |
 | 3 | Asisten Laboratorium | Membantu kegiatan laboratorium dan mengawasi pemakaian fasilitas | Mengetahui siapa memakai ruangan dan kapan |
-| 4 | Kepala Laboratorium | Bertanggung jawab mengatur jadwal pengguna laboratorium dan menetapkan kebijakan penggunaan | Jadwal pengguna laboratorium tertata, tidak bentrok, dan sesuai kebijakan |
+| 4 | Kepala Laboratorium | Mengatur jadwal, memberikan izin peminjaman, mengawasi laboran, mengelola fasilitas, dan bertanggung jawab atas seluruh kegiatan laboratorium | Penggunaan laboratorium berjalan tertib, fasilitas terjaga, dan jadwal tidak berbenturan |
 
 Pembagian tugas: Kepala Laboratorium mengatur jadwal secara keseluruhan dan menetapkan kebijakan, sedangkan Laboran menangani operasional harian dan memutuskan permohonan peminjaman individu.
 
@@ -77,7 +77,7 @@ Kebutuhan berikut menjelaskan fungsi layanan. Kebutuhan yang berpengaruh besar p
 | Kode | Kebutuhan Fungsional |
 |---|---|
 | KF-1 | Menampilkan ruangan yang kosong atau sedang dipakai beserta jadwalnya |
-| KF-2 | Mahasiswa mengajukan peminjaman, laboran memberi keputusan |
+| KF-2 |Mahasiswa mengajukan peminjaman laboratorium, kemudian Kepala Laboratorium memberikan keputusan persetujuan atau penolakan |
 | KF-3 | Menampilkan status permohonan (menunggu, diterima, ditolak) |
 | KF-4 | Menyediakan aturan dan persyaratan penggunaan laboratorium |
 | KF-5 | Kepala Laboratorium mengatur jadwal pengguna dan kebijakan penggunaan laboratorium |
@@ -100,7 +100,7 @@ ASR adalah kebutuhan kualitas yang paling memengaruhi keputusan arsitektur dan d
 |---|---|---|---|
 | ASR-1 | K1 Performance | Mahasiswa dapat melihat ketersediaan ruangan dengan cepat, walaupun banyak yang membuka bersamaan. | Saat **300 mahasiswa** membuka halaman ketersediaan secara bersamaan, minimal 95% permintaan berhasil menampilkan informasi dalam waktu maksimal **2 detik**. |
 | ASR-2 | K2 Reliability | Satu ruangan pada jam yang sama tidak boleh dipinjam dua orang. | Jika **100 mahasiswa** mengajukan peminjaman laboratorium yang sama pada tanggal dan jam yang sama secara bersamaan, **hanya 1 pengajuan yang diterima**, sedangkan 99 pengajuan lainnya ditolak karena jadwal sudah terisi. |
-| ASR-3 | K3 Usability | Mahasiswa dapat menemukan dan melihat status permohonan melalui akun masing-masing tanpa harus menghubungi laboran. | Setelah laboran menyetujui atau menolak permohonan, status dapat dilihat oleh mahasiswa maksimal dalam waktu **1 menit**. |
+| ASR-3 | K3 Usability | Mahasiswa dapat menemukan dan melihat status permohonan melalui akun masing-masing tanpa harus menghubungi laboran. | Setelah Kepala Laboratorium menyetujui atau menolak permohonan, status dapat dilihat oleh mahasiswa maksimal dalam waktu **1 menit**. |
 ## 1.7 Bagian yang Diperbarui dari Tugas Kelompok 1
 
 | Bagian Tugas Kelompok 1 | Isi sebelumnya | Pembaruan pada UTS |
