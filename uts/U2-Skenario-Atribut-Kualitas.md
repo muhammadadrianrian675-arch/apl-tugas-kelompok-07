@@ -38,7 +38,7 @@ Skenario ini menjawab masalah utama secara langsung: mahasiswa dapat melihat ket
 | Response | Sistem hanya meloloskan satu permohonan, sedangkan permohonan lain ditolak dengan pemberitahuan bahwa ruangan sudah terisi |
 | Response Measure | Hanya 1 orang yang mendapat ruangan, 99 lainnya diberi tahu bahwa ruangan sudah terisi, dan jadwal bentrok berjumlah 0 |
 
-Skenario ini menjawab risiko jadwal bertabrakan yang disampaikan pengelola laboratorium.
+Skenario ini menjawab risiko jadwal bertabrakan yang disampaikan asisten laboratorium.
 
 ### C. Skenario 3 – Kemudahan Mengetahui Status Permohonan (ASR-3)
 
