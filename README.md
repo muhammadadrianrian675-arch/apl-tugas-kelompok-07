@@ -42,14 +42,6 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | – | Sampul dan daftar isi | – | Belum ditentukan | Belum |
 | – | PDF akhir dan berkas tautan LMS | uts/UTS_III_Kelompok07.pdf, .txt | Belum ditentukan | Belum |
 
-### Yang masih harus diselesaikan
-
-1. Gambar U5 (`gambar-5.1.png` s.d. `gambar-5.4.png`) di-commit ke `uts/` agar diagram tampil.
-2. Penomoran bab mengikuti soal: U3–U4 = BAB III (3.x), U5 = BAB IV (4.x, Gambar 4.x), U6–U7 = BAB V.
-3. Sitasi [5] Gamma dkk. (State) dan [6] Fowler (Repository) ditambahkan di U4.
-4. Sebutan R2 diseragamkan menjadi "Asisten Laboratorium (R2)" di U2 dan U3.
-5. Akun commit pada Lampiran 2 dikonfirmasi oleh tiap anggota.
-
 ### Laporan PDF akhir
 
 `uts/UTS_III_Kelompok07.pdf` (maksimal 12 halaman isi). Tautan dikirim ke LMS Kalam UMI dalam berkas `UTS_III_Kelompok07.txt`.
