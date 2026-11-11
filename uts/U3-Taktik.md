@@ -7,7 +7,7 @@
 
 ## 3.1 Taktik (U3)
 
-Taktik merupakan langkah teknis yang diterapkan untuk mencapai karakteristik kualitas sistem yang telah ditentukan pada BAB II. Pada Layanan Peminjaman Ruang Laboratorium FIKOM UMI, taktik dirancang untuk mendukung kinerja, keandalan, dan kemudahan penggunaan sistem.
+Taktik merupakan langkah teknis yang diterapkan untuk mencapai skenario kualitas pada BAB II. Pada Layanan Peminjaman Ruang Laboratorium FIKOM UMI, taktik dirancang untuk mendukung kinerja, keandalan, dan kemudahan penggunaan sistem.
 
 Berikut taktik yang diterapkan pada masing-masing skenario.
 
