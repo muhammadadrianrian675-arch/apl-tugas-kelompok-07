@@ -13,7 +13,7 @@ Repositori Kelompok 07 Bagian III. Berisi **Tugas Proyek UTS** (folder `uts/`) d
 
 | No | Stambuk | Nama | Akun GitHub | UTS | Tugas Kelompok 1 |
 |---|---|---|---|---|---|
-| 1 | 13020240184 | Rendi Pratama | @RenDY-16 | U6, U7, Penutup, Pustaka, Lampiran | BAB I, B3, BAB IV |
+| 1 | 13020240184 | Rendi Pratama | @RenDY-16 | U6, U7, Penutup, Pustaka, Lampiran, Sampul, Daftar Isi, PDF akhir | BAB I, B3, BAB IV |
 | 2 | 13020240333 | Muh. Fahmi Ashar | @Fhmii-png | U3 | A2, A3, B1 |
 | 3 | 13020240112 | Muh. Ammar Samkhan | @Ammar1234567-gif | U1, U2 | A4, B2, B4 |
 | 4 | 13020240262 | Muhammad Adrian | @muhammadadnanrian675-arch | U4, U5 | A1, A5, B5, Pustaka |
@@ -38,9 +38,9 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | – | BAB VI Penutup | uts/BAB6-Penutup.md | Rendi Pratama | Draf |
 | – | Daftar pustaka (IEEE, 6 referensi) | uts/daftar-pustaka.md | Rendi Pratama | Draf |
 | – | Lampiran 1: ADR-001 s.d. ADR-004 | lampiran/L1-ADR.md | Rendi Pratama | Draf |
-| – | Lampiran 2: Pembagian tugas dan bukti kontribusi | lampiran/L2-pembagian-tugas.md | Rendi Pratama | Draf (akun perlu dikonfirmasi) |
-| – | Sampul dan daftar isi | – | Belum ditentukan | Belum |
-| – | PDF akhir dan berkas tautan LMS | uts/UTS_III_Kelompok07.pdf, .txt | Belum ditentukan | Belum |
+| – | Lampiran 2: Pembagian tugas dan bukti kontribusi | lampiran/L2-pembagian-tugas.md | Rendi Pratama | Draf |
+| – | Sampul dan daftar isi | uts/UTS_III_Kelompok07.pdf | Rendi Pratama | Draf |
+| – | PDF akhir dan berkas tautan LMS | uts/UTS_III_Kelompok07.pdf, uts/UTS_III_Kelompok07.txt | Rendi Pratama | Draf (menunggu gambar U5) |
 
 ### Yang masih harus diselesaikan
 
@@ -49,6 +49,7 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 3. Sitasi [5] Gamma dkk. (State) dan [6] Fowler (Repository) ditambahkan di U4.
 4. Sebutan R2 diseragamkan menjadi "Asisten Laboratorium (R2)" di U2 dan U3.
 5. Akun commit pada Lampiran 2 dikonfirmasi oleh tiap anggota.
+6. Foto bukti wawancara U1 disimpan sebagai file di repo (misalnya `bukti-data/`) agar dapat dimasukkan ke PDF.
 
 ### Laporan PDF akhir
 
