@@ -35,7 +35,7 @@ Ketika ditanya bagaimana cara mengetahui laboratorium yang sedang kosong, asiste
 
 > Mahasiswa bertanya langsung kepada laboran.
 
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/d4e75dc3-116e-4ba3-b286-764a994bf651" />
+<img width="1280" height="720" alt="image" src="../bukti-data/bukti-r2.jpg" />
 
 
 *Gambar 1.2 Dokumentasi Bukti 2*
