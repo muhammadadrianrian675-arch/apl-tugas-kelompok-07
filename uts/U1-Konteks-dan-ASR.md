@@ -25,7 +25,7 @@ Ketika ditanya apakah mengetahui cara mengecek ruangan laboratorium yang sedang 
 
 *Gambar 1.1 Dokumentasi Bukti 1*
 
-**Bukti 2 – Wawancara Pengelola Laboratorium (R2)**
+**Bukti 2 – Wawancara Asisten Laboratorium (R2)**
 
 Ketika ditanya bagaimana cara mengetahui laboratorium yang sedang kosong, pengelola menjelaskan:
 
@@ -47,7 +47,7 @@ Ketika ditanya apakah ingin mengetahui permohonan peminjamannya diterima atau di
 
 *Gambar 1.3 Dokumentasi Bukti 3*
 
-**Bukti tambahan – Wawancara Pengelola Laboratorium (R2)**
+**Bukti tambahan – Wawancara Asisten Laboratorium (R2)**
 
 Pengelola juga menyampaikan bahwa salah satu kendala peminjaman adalah jadwal penggunaan laboratorium yang bertabrakan.
 
@@ -97,3 +97,12 @@ ASR adalah kebutuhan kualitas yang paling memengaruhi keputusan arsitektur dan d
 | ASR-1 | K1 Performance | Mahasiswa dapat melihat ketersediaan ruangan dengan cepat, walaupun banyak yang membuka bersamaan. | Saat **300 mahasiswa** membuka halaman ketersediaan di waktu yang sama, hasilnya tampil dalam **2 detik**. |
 | ASR-2 | K2 Reliability | Satu ruangan pada jam yang sama tidak boleh dipinjam dua orang. | Jika **100 mahasiswa** memesan ruangan dan jam yang sama secara bersamaan, **hanya 1 orang yang mendapat ruangan**, dan 99 lainnya diberi tahu bahwa ruangan sudah terisi. |
 | ASR-3 | K3 Usability | Mahasiswa mengetahui status permohonan tanpa bertanya kepada laboran. | Setelah laboran menyetujui atau menolak, mahasiswa melihat statusnya dalam **1 menit**. |
+## 1.7 Bagian yang Diperbarui dari Tugas Kelompok 1
+
+| Bagian Tugas Kelompok 1 | Isi sebelumnya | Pembaruan pada UTS |
+|---|---|---|
+| Identifikasi Masalah | Membahas permasalahan jadwal laboratorium yang dapat berbenturan dengan kegiatan lain serta perubahan jadwal yang informasinya disampaikan melalui grup chat. | Dipersempit menjadi satu masalah utama, yaitu mahasiswa belum bisa mengetahui ketersediaan laboratorium secara mandiri. Masalah diperkuat dengan bukti hasil wawancara mahasiswa dan laboran. |
+| Kebutuhan Sistem | Kebutuhan arsitektural mencakup konsistensi jadwal, pengaturan persetujuan, pencatatan penggunaan laboratorium, dan ketersediaan layanan. | Kebutuhan fungsional diperinci menjadi KF-1 sampai KF-5, sedangkan kebutuhan kualitas difokuskan menjadi ASR-1 sampai ASR-3. |
+| Stakeholder | Melibatkan Mahasiswa, Dosen, Asisten Laboratorium, Admin Laboratorium, dan Kepala Laboratorium atau pihak pengelola berwenang. | Stakeholder disesuaikan menjadi empat pihak utama, yaitu Mahasiswa, Laboran, Asisten Laboratorium, dan Kepala Laboratorium, serta dilengkapi dengan kepentingan masing-masing. |
+| Karakteristik Kualitas | Mencakup Keandalan, Konsistensi Data, Konfigurabilitas, Modifiabilitas, Keamanan, dan Ketersediaan Layanan. | Difokuskan pada tiga karakteristik kualitas utama, yaitu Performance (K1), Reliability (K2), dan Usability (K3), yang kemudian dijabarkan dalam skenario ASR. |
+
