@@ -1,4 +1,8 @@
 # BAB II SKENARIO
+- **Nama:** Muh Ammar Samkhan
+- **Stambuk (NIM):** 13020240112
+- **Bagian Tugas:** U1 – Konteks dan ASR
+---
 
 ## 2.1 Identifikasi Kebutuhan Kualitas Sistem
 
