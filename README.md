@@ -35,12 +35,12 @@ Status: Belum / Draf / Selesai. Perbarui tabel ini setiap ada perubahan.
 | U5 | BAB IV Desain | uts/U5-Desain dan diagram.md | Muhammad Adrian | Draf |
 | U6 | BAB V Evaluasi dan ADR | uts/U6-Evaluasi.md | Rendi Pratama | Selesai |
 | U7 | BAB V Evaluasi dan ADR | uts/U7-ADR.md | Rendi Pratama | Selesai |
-| – | BAB VI Penutup | uts/BAB6-Penutup.md | Rendi Pratama | Draf |
-| – | Daftar pustaka (IEEE, 6 referensi) | uts/daftar-pustaka.md | Rendi Pratama | Draf |
-| – | Lampiran 1: ADR-001 s.d. ADR-004 | lampiran/L1-ADR.md | Rendi Pratama | Draf |
-| – | Lampiran 2: Pembagian tugas dan bukti kontribusi | lampiran/L2-pembagian-tugas.md | Rendi Pratama | Draf |
-| – | Sampul dan daftar isi | uts/UTS_III_Kelompok07.pdf | Rendi Pratama | Draf |
-| – | PDF akhir dan berkas tautan LMS | uts/UTS_III_Kelompok07.pdf, uts/UTS_III_Kelompok07.txt | Rendi Pratama | Draf (menunggu gambar U5) |
+| – | BAB VI Penutup | uts/BAB6-Penutup.md | Rendi Pratama | Selesai |
+| – | Daftar pustaka (IEEE, 6 referensi) | uts/daftar-pustaka.md | Rendi Pratama | Selesai |
+| – | Lampiran 1: ADR-001 s.d. ADR-004 | lampiran/L1-ADR.md | Rendi Pratama | Selesai |
+| – | Lampiran 2: Pembagian tugas dan bukti kontribusi | lampiran/L2-pembagian-tugas.md | Rendi Pratama | Selesai |
+| – | Sampul dan daftar isi | uts/UTS_III_Kelompok07.pdf | Rendi Pratama | Selesai |
+| – | PDF akhir dan berkas tautan LMS | uts/UTS_III_Kelompok07.pdf, uts/UTS_III_Kelompok07.txt | Rendi Pratama | Selesai |
 
 <<<<<<< HEAD
 ### Yang masih harus diselesaikan
