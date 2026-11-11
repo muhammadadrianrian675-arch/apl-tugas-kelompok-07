@@ -12,7 +12,7 @@ Bab ini menyajikan desain layanan dalam empat diagram: diagram konteks, diagram 
 
 Diagram konteks menunjukkan layanan sebagai satu kesatuan beserta pihak luar yang berinteraksi dengannya. Pihak luar diambil dari stakeholder pada BAB I (subbab 1.3).
 
-[![Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI](Gambar%20Diagram/4.1_Diagram_Konteks.png)
+![Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI](Gambar%20Diagram/4.1_Diagram_Konteks.png)
 *Gambar 4.1 Diagram Konteks Layanan Peminjaman Ruang Laboratorium FIKOM UMI*
 
 > **Keterangan:** Persegi panjang adalah entitas luar, elips adalah layanan, dan anak panah adalah aliran data beserta arahnya.
@@ -30,7 +30,7 @@ Diagram konteks menunjukkan layanan sebagai satu kesatuan beserta pihak luar yan
 
 Diagram arsitektur menunjukkan struktur internal layanan yang menerapkan tiga pola pada BAB IV: Layered pada pembagian lapisan, Repository pada lapisan akses data, dan State pada Layanan Status.
 
-[![Gambar 4.2 Diagram Arsitektur Layanan dengan Pola Layered, Repository, dan State](Gambar%20Diagram/4.2%20Diagram_Arsitektur.png)
+![Gambar 4.2 Diagram Arsitektur Layanan dengan Pola Layered, Repository, dan State](Gambar%20Diagram/4.2%20Diagram_Arsitektur.png)
 *Gambar 5.2 Diagram Arsitektur Layanan dengan Pola Layered, Repository, dan State*
 
 | Elemen | Pola/Taktik | Fungsi |
@@ -50,7 +50,7 @@ Diagram arsitektur menunjukkan struktur internal layanan yang menerapkan tiga po
 
 Diagram kelas menggambarkan kelas utama layanan beserta hubungannya. Kelas berwarna biru adalah layanan, jingga adalah repository, dan kuning adalah kelas pola State.
 
-[![Gambar 4.3 Diagram Kelas Layanan Peminjaman Ruang Laboratorium](Gambar%20Diagram/4.3%20Diagram_Class.png)
+![Gambar 4.3 Diagram Kelas Layanan Peminjaman Ruang Laboratorium](Gambar%20Diagram/4.3%20Diagram_Class.png)
 *Gambar 5.3 Diagram Kelas Layanan Peminjaman Ruang Laboratorium*
 
 **Keterangan:**
@@ -66,7 +66,7 @@ Diagram kelas menggambarkan kelas utama layanan beserta hubungannya. Kelas berwa
 
 Diagram sequence menunjukkan urutan interaksi saat mahasiswa mengajukan peminjaman dan memperlihatkan bagaimana Taktik 2 bekerja untuk Skenario 2.
 
-[![Gambar 4.4 Diagram Sequence Pengajuan Peminjaman Ruangan](Gambar%20Diagram/4.4%20Diagram%20Sequence.png)
+![Gambar 4.4 Diagram Sequence Pengajuan Peminjaman Ruangan](Gambar%20Diagram/4.4%20Diagram%20Sequence.png)
 *Gambar 5.4 Diagram Sequence Pengajuan Peminjaman Ruangan*
 
 > **Keterangan:** Garis tegas adalah pemanggilan, garis putus-putus adalah balasan, dan kotak alt menunjukkan dua kemungkinan alur.
