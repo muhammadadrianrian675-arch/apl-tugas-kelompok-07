@@ -50,7 +50,7 @@ Diagram arsitektur menunjukkan struktur internal layanan yang menerapkan tiga po
 
 Diagram kelas menggambarkan kelas utama layanan beserta hubungannya. Kelas berwarna biru adalah layanan, jingga adalah repository, dan kuning adalah kelas pola State.
 
-[![Gambar 4.3 Diagram Kelas Layanan Peminjaman Ruang Laboratorium](Gambar%20Diagram/4.3%20Diagram_Class.png)
+![Gambar 4.3 Diagram Kelas Layanan Peminjaman Ruang Laboratorium](Gambar%20Diagram/4.3%20Diagram_Class.png)
 *Gambar 5.3 Diagram Kelas Layanan Peminjaman Ruang Laboratorium*
 
 **Keterangan:**
