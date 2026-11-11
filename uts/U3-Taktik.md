@@ -1,5 +1,5 @@
 
-# BAB III TAKTIK
+# BAB III TAKTIK DAN POLA
 
 **Nama:** Muh. Fahmi Ashar  
 **NIM:** 13020240333  
