@@ -31,7 +31,7 @@ Penggunaan indeks membutuhkan ruang penyimpanan tambahan pada database. Selain i
 
 **Permasalahan:**
 
-Pengelola laboratorium menyampaikan bahwa salah satu kendala peminjaman adalah jadwal penggunaan laboratorium yang bertabrakan. Oleh karena itu, sistem harus memastikan satu ruangan tidak dapat dipinjam oleh dua pengguna pada waktu yang sama.
+Asisten Laboratorium (R2) menyampaikan bahwa salah satu kendala peminjaman adalah jadwal penggunaan laboratorium yang bertabrakan. Oleh karena itu, sistem harus memastikan satu ruangan tidak dapat dipinjam oleh dua pengguna pada waktu yang sama.
 
 **Taktik yang digunakan: Transaction Management dan Concurrency Control**
 
